@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1'>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=windows-1251">
+<META NAME="description" CONTENT="Достопримечательности Батуми , Старые фотографии , Батум , Батуми , Кобулети , Артвин">
+<META NAME="keywords" CONTENT="Грузия,Батум , Батуми , старые фотографии,старые  фото, Batum , Batoum , old foto">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" href="galleria/ic.ico" type="image/x-icon" />  
+<title>: Батум старые фото : Batum : old foto :</title>
+	<style>
+            .galleria {
+            min-height: 400px;
+            /* defines a static gallery height */
+            width:95%;
+            /* defines a responsive width */
+            background: #000000;
+            margin: auto;
+            }
+            legend, h1{text-align:center}
+            #show-gallery {text-align:center;margin-bottom:20px;;}
+            body{background-color: #EEEEEE}
+            #info{margin-top:20px;margin-bottom:20px;text-align:center;border:1px solid #DDDDDD;}
+         #ss{ 
+            border: none;
+            border-radius: 0px;
+            color: #666;
+            background-color: #efefef;
+            font-size: 15px;
+            padding-left: 15px;
+            -webkit-appearance: none;
+            background-image: url('galleria/select.png');
+            background-position: right center;
+            background-repeat: no-repeat;
+            -moz-appearance: none;
+        }
+        
+        
+            </style>
+    <link rel='stylesheet' href='galleria/jquery.mobile-1.4.5.min.css' />
+    <script src='galleria/jquery.mobile-1.4.5.min.js'></script>
+    <script src="galleria/jquery-2.2.4.min.js"></script>
+    <script src="galleria/galleria.min.js"></script>
+    <script src="galleria/dbase.js"></script>
+        </head>
+<body>
+   
+    
+
+<!-- Main Page -->
+<div data-role='page' data-theme='c'>
+    
+<div data-role='header'>
+<h1>Батум: cтарые фото</h1>
+  <div id="info">напишите нам  : ivpromo7@gmail.com </div>
+</div>
+    
+<div id='content' data-role='content'>
+  <div  class="galleria"></div>
+</div>
+    
+<div data-role='footer'>
+<div id="show-gallery">Раздел : Батум. Люди .</div>
+    
+  <fieldset class="selector">
+      <legend>Выбор раздела</legend>
+<select id="ss">
+                  <option value="Люди"> Люди</option>
+                <option value="Культовые учреждения">Культовые учреждения</option>
+                <option value="Улицы">Улицы</option>
+                <option value="Порт">Порт, корабли</option>
+                <option value="Парк">Пионерский парк</option>
+                <option value="Бульвар">Бульвар</option>
+                <option value="Окрестности">Окрестности Батума</option>
+                <option value="USSR">Батуми времен СССР</option>
+                <option value="Прокудин">Фото С.М.Прокудина-Горского</option>
+                <option value="Артвин">Артвин</option>
+                <option value="All">Все разделы</option>
+            </select>
+      </fieldset> 
+   
+</div>
+    
+</div>
+    <script>
+        var ob = document.getElementById("ss");
+        ob.addEventListener("change", changeOption);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                     function changeOption(){
+                         
+         var obj= {dataSource: eval("data"+(ob.selectedIndex+1)) ,imageCrop: 'height' ,autoplay:true,transition:'slide' };
+         var row=document.getElementById("show-gallery");
+                         
+        switch(ob.selectedIndex){
+        case 0:
+        Galleria.run('.galleria', obj); //people
+        row.innerHTML="Раздел : Батум. Люди ";
+        break;
+        case 1:
+        Galleria.run('.galleria', obj); //kult
+        row.innerHTML="Раздел : Батум. Культовые учреждения ";
+        break;
+        case 2:
+        Galleria.run('.galleria', obj);
+        row.innerHTML="Раздел : Батум. Улицы ";
+        break;
+        case 3:
+        Galleria.run('.galleria',obj);
+        row.innerHTML="Раздел : Батум. Порт ";
+        break;
+        case 4:
+        Galleria.run('.galleria', obj);
+        row.innerHTML="Раздел : Батум. Пионерский парк ";
+        break;                
+        case 5:
+        Galleria.run('.galleria', obj);
+        row.innerHTML="Раздел : Батум. Бульвар ";
+        break;      
+        case 6:
+        Galleria.run('.galleria', obj);
+        row.innerHTML="Раздел : Окрестности Батума. ";
+        break;
+        case 7:
+        Galleria.run('.galleria', obj);
+        row.innerHTML="Раздел : Батуми времен СССР . ";
+        break;
+        case 8:
+        Galleria.run('.galleria', obj);
+        row.innerHTML="Раздел : Фото по Батуму С.М.Прокудина-Горского . ";
+        break;
+         case 9:
+        Galleria.run('.galleria', obj);
+        row.innerHTML="Раздел : Артвин . ";
+        break;       
+        case 10:
+        Galleria.run('.galleria', obj);
+        row.innerHTML="Раздел : Батум. Все фото ";
+        break;
+        }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+ 
+        
+        
+        
+        
+   $(document).ready(function(){
+          //Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+         Galleria.loadTheme('galleria/themes/twelve/galleria.twelve.js');
+          Galleria.run('.galleria',{dataSource: data1 ,imageCrop: 'height' ,autoplay:true,transition:'slide'} );
+          // Galleria.configure({imageCrop: 'height'},{ autoplay:false},{transition:'slide'} );//'slide' or 'fade'
+});
+            
+ </script>   
+</body>
+</html>
