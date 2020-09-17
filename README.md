@@ -1,2 +1,0 @@
-# batum
-batum database
